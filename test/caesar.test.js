@@ -12,12 +12,16 @@ describe("caesar", () => {
         const expected = 'qefkhcri';
         expect(actual).to.eql(expected);
     });
-    it("should return decoded message", () => {
+    it("should return decoded message with forward shift", () => {
+        const actual = caesar("qefkhcri", -3, false);
+        const expected = 'thinkful';
+        expect(actual).to.eql(expected);
+    });
+    it("should return decoded message with backward shift", () => {
         const actual = caesar("wklqnixo", 3, false);
         const expected = 'thinkful';
         expect(actual).to.eql(expected);
     });
-
     it("should ignore capitals, maintain spaces and non-alphabetic symbols- encoding", () => {
         const actual = caesar("This is a secret message!", 8);
         const expected = 'bpqa qa i amkzmb umaaiom!';

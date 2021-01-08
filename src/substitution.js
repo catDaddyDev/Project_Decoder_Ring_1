@@ -1,5 +1,5 @@
 function substitution(input, alphabet, encode = true) {
-    // array of alphabet characters
+    // string of alphabet characters
     const trueAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
     const inputLowerCase = input.toLowerCase();  // ignores capitals
@@ -38,7 +38,7 @@ function substitution(input, alphabet, encode = true) {
 
     }
 
-  return result;
+return result;
 }
 
 module.exports = substitution;
