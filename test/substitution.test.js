@@ -25,6 +25,10 @@ describe('substitution', () => {
         const actual = substitution("thinkful", "short");
         expect(actual).to.be.false;
     });
+    it("should return false if the 'alphabet' is not a string", () => {
+        const actual = substitution("thinkful", 42);
+        expect(actual).to.be.false;
+    });
     it("should return false if all of the characters in the 'alphabet' are not unique", () => {
         const actual = substitution("thinkful", "abcabcabcabcabcabcabcabcyz");
         expect(actual).to.be.false;

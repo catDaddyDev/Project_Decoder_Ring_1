@@ -5,9 +5,11 @@ function substitution(input, alphabet, encode = true) {
     const inputLowerCase = input.toLowerCase();  // ignores capitals
 
     let result  = ''; // will hold encoded/decoded string
+    // check that the 'alphabet' is a string
+    if (typeof alphabet !== 'string') return false;
 
     // should return false if 'alphabet' parameter isn't exactly 26 characters
-    if (alphabet.length !== 26) return false;
+    if (alphabet.length !== trueAlphabet.length) return false;
 
     // should return false if 'input' and 'alphabet' are missing
     if (!alphabet || !input) return false;
