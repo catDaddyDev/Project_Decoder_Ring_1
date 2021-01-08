@@ -17,15 +17,19 @@ describe('substitution', () => {
         const expected = 'elp xhm xf mbymwwmfj dne';
         expect(actual).to.eql(expected);
     });
-    it("should return false if the 'alphabet' parameter is not exactly a string of 26 characters", () => {
+    it(("should return false if 'input' or 'alphabet' is missing"), () => {
+        const actual = substitution("", "");
+        expect(actual).to.be.false;
+    });
+    it("should return false if the 'alphabet' is not exactly a string of 26 characters", () => {
         const actual = substitution("thinkful", "short");
         expect(actual).to.be.false;
     });
-    it("should return false if all of the characters in the 'alphabet' parameter are not unique", () => {
+    it("should return false if all of the characters in the 'alphabet' are not unique", () => {
         const actual = substitution("thinkful", "abcabcabcabcabcabcabcabcyz");
         expect(actual).to.be.false;
     });
-    it("Alphabet should contain all characters in the input, return false otherwise", () => {
+    it("should return false if 'alphabet' doesn't contain all characters in the 'input'", () => {
         const actual = substitution('jrufscpw', 'xoyqmcgrukswaflnthd!pzibev', false);
         expect(actual).to.be.false;
     });

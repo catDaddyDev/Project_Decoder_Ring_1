@@ -6,8 +6,11 @@ function substitution(input, alphabet, encode = true) {
 
     let result  = ''; // will hold encoded/decoded string
 
-    // should return false if 'alphabet' parameter isn't exactly 26
+    // should return false if 'alphabet' parameter isn't exactly 26 characters
     if (alphabet.length !== 26) return false;
+
+    // should return false if 'input' and 'alphabet' are missing
+    if (!alphabet || !input) return false;
 
     // should return false if all of the characters in the 'alphabet' aren't unique (duplicates)
     if (Array.from(new Set(alphabet)).length !== 26) return false;
